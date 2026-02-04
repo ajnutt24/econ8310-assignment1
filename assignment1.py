@@ -30,7 +30,7 @@ y_train = y_train.asfreq('h')
 # Exponential Smoothing model
 model = ExponentialSmoothing(
     y_train,
-    trend="add",
+    trend=None,
     seasonal="add",
     seasonal_periods=168,
     initialization_method="estimated"
@@ -42,5 +42,6 @@ modelFit = model.fit(optimized=True)
 n_steps = len(test_df)
 pred = modelFit.forecast(n_steps)
 pred = pred.to_numpy()
+
 
 
