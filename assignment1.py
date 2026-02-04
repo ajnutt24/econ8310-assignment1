@@ -41,4 +41,5 @@ modelFit = model.fit(optimized=True)
 # Forecast test period
 n_steps = len(test_df)
 pred = modelFit.forecast(n_steps)
-pred = pd.Series(pred.values, index=test_df[dt_col].values, name="pred")
+pred = pred.to_numpy()
+
